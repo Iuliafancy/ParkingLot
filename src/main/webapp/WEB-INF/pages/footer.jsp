@@ -8,11 +8,13 @@
         position: fixed;
         padding: 10px 100px 10px 100px;
         bottom: 0;
-        width: 100%;
+        width: 150%;
+        text-align:center;
         /* Height of the footer*/
         height: 50px;
         left: 0;
         bottom: 0;
-        background: lightgoldenrodyellow;
+        margin-bottom:0;
+
     }
 </style>
