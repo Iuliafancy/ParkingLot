@@ -7,7 +7,21 @@ import jakarta.persistence.ManyToOne;
 
 @Entity
 public class Car {
+    private User owner;
     private Long id;
+
+    public String licensePlate;
+
+    private String parkingSpot;
+    @ManyToOne
+    public User getOwner() {
+        return owner;
+    }
+
+    public void setOwner(User owner) {
+        this.owner = owner;
+    }
+
 
     public void setId(Long id) {
         this.id = id;
@@ -18,34 +32,20 @@ public class Car {
     public Long getId() {
         return id;
     }
-    private String licencePlate;
-    private String parkingSpot;
 
-    public String getLicencePlate() {
-        return licencePlate;
-    }
-
-    public void setLicencePlate(String licencePlate) {
-        this.licencePlate = licencePlate;
-    }
-
-    public String getParkingSpot() {
-        return parkingSpot;
+    public void setLicensePlate(String licensePlate) {
+        this.licensePlate = licensePlate;
     }
 
     public void setParkingSpot(String parkingSpot) {
         this.parkingSpot = parkingSpot;
     }
 
-    private User owner;
-
-    @ManyToOne
-    public User getOwner() {
-        return owner;
+    public  String getLicensePlate() {
+        return licensePlate;
     }
 
-    public void setOwner(User owner) {
-        this.owner = owner;
+    public String getParkingSpot() {
+        return parkingSpot;
     }
-
 }
