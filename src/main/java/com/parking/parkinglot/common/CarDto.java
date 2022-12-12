@@ -1,5 +1,9 @@
 package com.parking.parkinglot.common;
 
+import java.util.List;
+
+
+
 public class CarDto {
     Long id;
     String licensePlate;
@@ -13,35 +17,13 @@ public class CarDto {
         this.ownerName = ownerName;
     }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+    public Long getId() {return id;}
 
-    public void setLicensePlate(String licensePlate) {
-        this.licensePlate = licensePlate;
-    }
+    public String getLicensePlate() {return licensePlate;}
 
-    public void setParkingSpot(String parkingSpot) {
-        this.parkingSpot = parkingSpot;
-    }
+    public String getParkingSpot() { return parkingSpot;}
 
-    public void setOwnerName(String ownerName) {
-        this.ownerName = ownerName;
-    }
+    public String getOwnerName() {return ownerName;}
 
-    public Long getId() {
-        return id;
-    }
 
-    public String getLicensePlate() {
-        return licensePlate;
-    }
-
-    public String getParkingSpot() {
-        return parkingSpot;
-    }
-
-    public String getOwnerName() {
-        return ownerName;
-    }
 }

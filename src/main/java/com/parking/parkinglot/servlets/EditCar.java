@@ -1,7 +1,9 @@
 package com.parking.parkinglot.servlets;
 
+
 import com.parking.parkinglot.common.CarDto;
 import com.parking.parkinglot.common.UserDto;
+import com.parking.parkinglot.ejb.CarsBean;
 import jakarta.inject.Inject;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -19,7 +21,7 @@ public class EditCar extends HttpServlet {
     @Inject
     com.parking.parkinglot.ejb.UserBean userBean; //nu ma lasa fara path
     @Inject
-    com.parking.parkinglot.ejb.CarsBean carsBean;
+    CarsBean carsBean;
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -30,7 +32,9 @@ public class EditCar extends HttpServlet {
         CarDto car=carsBean.findById(carId);
         request.setAttribute("car",car);
 
-        request.getRequestDispatcher("/WEB-INF/pages/editCar.jsp").forward(request,response);
+
+        request.getRequestDispatcher("/WEB-INF/pages/editcar.jsp").forward(request,response);// daca las addCar.jsp adauga fara sa il stearga pe cel anterior
+        //daca las editcar.jsp apare eroare de la glassfish
 
     }
     @Override
