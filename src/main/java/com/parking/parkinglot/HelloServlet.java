@@ -1,4 +1,5 @@
-package com.parking.parkinglot.servlets;
+package com.parking.parkinglot;
+
 
 import java.io.*;
 

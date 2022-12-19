@@ -11,9 +11,19 @@
 
 <t:pageTemplate pageTitle="Users">
   <h1>Users</h1>
+
+  <form method="POST" action="${pageContext.request.contextPath}/Users">
+    <a class="btn btn-primary btn-lg" href="${pageContext.request.contextPath}/AddUser">Add User</a>
+    <button class="btn btn-danger" type="submit">Delete Users</button>
+
   <div class="container text-center">
     <c:forEach var="user" items="${user}">
       <div class="row">
+        <div class="col">
+          <c:if test="${pageContext.request.isUserInRole('WRITE_USERS')}">
+            <input type="checkbox" name="user_ids" value="${user.id}" />
+          </c:if>
+        </div>
         <div class="col">
             ${user.email}
         </div>
