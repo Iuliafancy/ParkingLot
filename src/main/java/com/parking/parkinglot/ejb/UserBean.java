@@ -53,6 +53,7 @@ public class UserBean {
         entityManager.persist(newUser);
         assignGroupsToUser(username, groups);
     }
+
     private void assignGroupsToUser(String username, Collection<String> groups) {
         LOG.info("assignGroupsToUser");
         for (String group : groups) {
@@ -62,12 +63,22 @@ public class UserBean {
             entityManager.persist(userGroup);
         }
     }
+
     public void deleteUsersByIds(Collection<Long> userIds) {
         LOG.info("deleteUsersByIds");
         for(Long userId : userIds){
             User user = entityManager.find(User.class, userId);
             entityManager.remove(user);
         }
+    }
+
+    public Collection<String> findUsernamesByUserIds(Collection<Long> userIds){
+        List<String> usernames =
+                entityManager.createQuery("SELECT u.username FROM User u WHERE u.id IN :userIds", String.class)
+                        .setParameter("userIds", userIds)
+                        .getResultList();
+        return usernames;
+
     }
 
 }
