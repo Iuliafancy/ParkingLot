@@ -11,6 +11,8 @@
         <button class="btn btn-danger" type="submit"> Delete Cars</button>
     <div class="container text-center">
         <c:forEach var="car" items="${cars}">
+
+
             <div class="row">
                 <div class="col">
                     <input type="checkbox" name="car_ids"  value="${car.id}"/>
@@ -38,12 +40,14 @@
                     <a class="btn btn-secondary" href="${pageContext.request.contextPath}/EditCar?id=${car.id}">Edit
                         Car</a>
                 </div>
-        </c:if>
+                    ${numberOfFreeParkingSpots=numberOfFreeParkingSpots-1}
+
+
             </div>
         </c:forEach>
     </div>
 
     </form>
 
-    <h5>Free parking spots: ${numberOfFreeParkingSpots}</h5>
+    <h5>Free parking spots: ${numberOfFreeParkingSpots-count}</h5>
 </t:pageTemplate>

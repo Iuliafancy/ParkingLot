@@ -3,18 +3,17 @@ package com.parking.parkinglot.entities;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToOne;
 
 @Entity
 public class CarPhoto {
-
     private Long id;
     String filename;
     String fileType;
     byte[] fileContent;
     Car car;
-@Id
-@GeneratedValue
+
+    @Id
+    @GeneratedValue
     public Long getId() {
         return id;
     }
@@ -47,7 +46,6 @@ public class CarPhoto {
         this.fileContent = fileContent;
     }
 
-    @OneToOne
     public Car getCar() {
         return car;
     }

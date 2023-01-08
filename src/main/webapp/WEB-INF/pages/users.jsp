@@ -32,6 +32,10 @@
         <div class="col">
             ${user.username}
         </div>
+          <div class="col">
+                  <a class="btn btn-secondary" href="${pageContext.request.contextPath}/EditUser?id=${user.id}">Edit
+                      User</a>
+          </div>
       </div>
     </c:forEach>
   </div>
